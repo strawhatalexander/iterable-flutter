@@ -103,10 +103,7 @@ class IterableFlutterPlugin : FlutterPlugin, MethodCallHandler {
     val configBuilder = IterableConfig.Builder()
       .setPushIntegrationName(pushIntegrationName)
       .setAutoPushRegistration(false)
-      .setCustomActionHandler { _, _ ->
-        notifyPushNotificationOpened()
-        false
-      }
+      .setAllowedProtocols(arrayOf("http","poached"))
 
     if (activeLogDebug) {
       configBuilder.setLogLevel(Log.DEBUG)

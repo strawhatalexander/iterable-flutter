@@ -3,7 +3,7 @@ import UIKit
 import IterableSDK
 import UserNotifications
 
-public class SwiftIterableFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCenterDelegate, IterableCustomActionDelegate, IterableURLDelegate {
+public class SwiftIterableFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCenterDelegate, IterableURLDelegate {
    
     static var channel: FlutterMethodChannel? = nil
     
@@ -77,8 +77,8 @@ public class SwiftIterableFlutterPlugin: NSObject, FlutterPlugin, UNUserNotifica
         let config = IterableConfig()
         config.pushIntegrationName = pushIntegrationName
         config.autoPushRegistration = true
-        config.customActionDelegate = self
         config.urlDelegate = self
+        config.allowedProtocols = ["poached://"]
         
         IterableAPI.initialize(apiKey: apiKey, config: config)
     }

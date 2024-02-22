@@ -149,7 +149,7 @@ public class SwiftIterableFlutterPlugin: NSObject, FlutterPlugin, UNUserNotifica
             "body": alertInfo["body"] ?? "",
             "additionalData": userInfo
         ] as [String : Any]
-        
+        print("luffy openNotificationHandler iterable_flutter plugin")
         SwiftIterableFlutterPlugin.channel?.invokeMethod("openedNotificationHandler", arguments: payload)
         
     }

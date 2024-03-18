@@ -79,6 +79,7 @@ public class SwiftIterableFlutterPlugin: NSObject, FlutterPlugin, UNUserNotifica
         config.autoPushRegistration = true
         config.customActionDelegate = self
         config.urlDelegate = self
+        config.allowedProtocols = ["poached"]
         
         IterableAPI.initialize(apiKey: apiKey, config: config)
     }

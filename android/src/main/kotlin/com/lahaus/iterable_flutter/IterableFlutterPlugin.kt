@@ -102,7 +102,8 @@ class IterableFlutterPlugin : FlutterPlugin, MethodCallHandler {
   private fun initialize(apiKey: String, pushIntegrationName: String, activeLogDebug: Boolean) {
     val configBuilder = IterableConfig.Builder()
       .setPushIntegrationName(pushIntegrationName)
-      .setAutoPushRegistration(false)
+      .setAutoPushRegistration(true)
+      .setAllowedProtocols(arrayOf("poached"))
       .setCustomActionHandler { _, _ ->
         notifyPushNotificationOpened()
         false
